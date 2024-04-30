@@ -1,6 +1,5 @@
 /* eslint-disable camelcase */
-import { clerkClient } from "@clerk/nextjs/server";
-import { WebhookEvent } from "@clerk/nextjs/server";
+import { clerkClient, WebhookEvent } from "@clerk/nextjs/server";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 import { Webhook } from "svix";
@@ -86,6 +85,7 @@ export async function POST(req: Request) {
 
   // UPDATE
   if (eventType === "user.updated") {
+    console.log("User got updated");
     const { id, image_url, first_name, last_name, username } = evt.data;
 
     const user = {
