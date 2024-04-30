@@ -76,13 +76,13 @@ const Sidebar = () => {
                 );
               })}
               <li className="flex-center cursor-pointer gap-2 p-4">
-                <UserButton afterSignOutUrl="/sign-in" showName />
+                <UserButton afterSignOutUrl="/" showName />
               </li>
             </ul>
           </SignedIn>
           <SignedOut>
             <Button asChild className="bg-purple-gradient button bg-cover">
-              <Link href={"/"}>Login</Link>
+              <Link href={"/sign-in"}>Login</Link>
             </Button>
           </SignedOut>
         </nav>
