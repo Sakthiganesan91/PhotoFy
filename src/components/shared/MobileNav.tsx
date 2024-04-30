@@ -3,9 +3,10 @@ import React from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Link from "next/link";
 import Image from "next/image";
-import { SignedIn, UserButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { navLinks } from "../../../constants/index";
 import { usePathname } from "next/navigation";
+import { Button } from "../ui/button";
 
 const MobileNav = () => {
   const pathname = usePathname();
@@ -68,6 +69,11 @@ const MobileNav = () => {
             </SheetContent>
           </Sheet>
         </SignedIn>
+        <SignedOut>
+          <Button asChild className="bg-purple-gradient button bg-cover">
+            <Link href={"/sign-in"}>Login</Link>
+          </Button>
+        </SignedOut>
       </nav>
     </header>
   );
